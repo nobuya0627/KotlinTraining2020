@@ -5,7 +5,6 @@ fun main(args: Array<String>) {
     println("Enter 3 numbers, 1:start 2:end 3:inc")
     var (a, b,c) = readLine()!!.split(' ')
 
-    println("test")
     val generator : NumberGenerator = IncrementalNumberGenerator(a.toInt(), b.toInt(), c.toInt())
     val observer1 : Observer = DigitObserver()
     val observer2 : Observer = GraphObserver()
@@ -41,7 +40,7 @@ class  FrameObserver : Observer {
 class GraphObserver : Observer {
     override fun update( gen : NumberGenerator ){
        val buf = StringBuilder()
-       for ( i in 0..gen.getNumber() ) {
+       for ( i in 1..gen.getNumber() ) {
            buf.append("*")
         }
         println(buf.toString());
