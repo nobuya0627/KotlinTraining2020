@@ -1,29 +1,29 @@
 public class Hand {
-    public static final int HANDVALUE_GUU = 0;  // ƒO[‚ğ•\‚·’l
-    public static final int HANDVALUE_CHO = 1;  // ƒ`ƒ‡ƒL‚ğ•\‚·’l
-    public static final int HANDVALUE_PAA = 2;  // ƒp[‚ğ•\‚·’l
-    public static final Hand[] hand = {         // ‚¶‚á‚ñ‚¯‚ñ‚Ìè‚ğ•\‚·3‚Â‚ÌƒCƒ“ƒXƒ^ƒ“ƒX
+    public static final int HANDVALUE_GUU = 0;  // ï¿½Oï¿½[ï¿½ï¿½\ï¿½ï¿½ï¿½l
+    public static final int HANDVALUE_CHO = 1;  // ï¿½`ï¿½ï¿½ï¿½Lï¿½ï¿½\ï¿½ï¿½ï¿½l
+    public static final int HANDVALUE_PAA = 2;  // ï¿½pï¿½[ï¿½ï¿½\ï¿½ï¿½ï¿½l
+    public static final Hand[] hand = {         // ï¿½ï¿½ï¿½ï¿½ñ‚¯‚ï¿½Ìï¿½ï¿½\ï¿½ï¿½3ï¿½Â‚ÌƒCï¿½ï¿½ï¿½Xï¿½^ï¿½ï¿½ï¿½X
         new Hand(HANDVALUE_GUU),
         new Hand(HANDVALUE_CHO),
         new Hand(HANDVALUE_PAA),
     };
-    private static final String[] name = {      // ‚¶‚á‚ñ‚¯‚ñ‚Ìè‚Ì•¶š—ñ•\Œ»
-        "ƒO[", "ƒ`ƒ‡ƒL", "ƒp[",
+    private static final String[] name = {      // ï¿½ï¿½ï¿½ï¿½ñ‚¯‚ï¿½Ìï¿½Ì•ï¿½ï¿½ï¿½ï¿½ï¿½\ï¿½ï¿½
+        "ï¿½Oï¿½[", "ï¿½`ï¿½ï¿½ï¿½L", "ï¿½pï¿½[",
     };
-    private int handvalue;                      // ‚¶‚á‚ñ‚¯‚ñ‚Ìè‚Ì’l
+    private int handvalue;                      // ï¿½ï¿½ï¿½ï¿½ñ‚¯‚ï¿½Ìï¿½Ì’l
     private Hand(int handvalue) {
         this.handvalue = handvalue;
     }
-    public static Hand getHand(int handvalue) { // ’l‚©‚çƒCƒ“ƒXƒ^ƒ“ƒX‚ğ“¾‚é
+    public static Hand getHand(int handvalue) { // ï¿½lï¿½ï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½Xï¿½^ï¿½ï¿½ï¿½Xï¿½ğ“¾‚ï¿½
         return hand[handvalue];
     }
-    public boolean isStrongerThan(Hand h) {     // this‚ªh‚æ‚è‹­‚¢‚Æ‚«true
+    public boolean isStrongerThan(Hand h) {     // thisï¿½ï¿½hï¿½ï¿½è‹­ï¿½ï¿½ï¿½Æ‚ï¿½true
         return fight(h) == 1;
     }
-    public boolean isWeakerThan(Hand h) {       // this‚ªh‚æ‚èã‚¢‚Æ‚«true
+    public boolean isWeakerThan(Hand h) {       // thisï¿½ï¿½hï¿½ï¿½ï¿½ã‚¢ï¿½Æ‚ï¿½true
         return fight(h) == -1;
     }
-    private int fight(Hand h) {                 // ˆø‚«•ª‚¯‚Í0, this‚ÌŸ‚¿‚È‚ç1, h‚ÌŸ‚¿‚È‚ç-1
+    private int fight(Hand h) {                 // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½0, thisï¿½Ìï¿½ï¿½ï¿½ï¿½È‚ï¿½1, hï¿½Ìï¿½ï¿½ï¿½ï¿½È‚ï¿½-1
         if (this == h) {
             return 0;
         } else if ((this.handvalue + 1) % 3 == h.handvalue) {
@@ -32,7 +32,7 @@ public class Hand {
             return -1;
         }
     }
-    public String toString() {                  // •¶š—ñ•\Œ»‚Ö•ÏŠ·
+    public String toString() {                  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½Ö•ÏŠï¿½
         return name[handvalue];
     }
 }
